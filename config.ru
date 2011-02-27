@@ -2,16 +2,17 @@
 
 require 'net/http'
 require 'uri'
-require 'rocco'
+require './vendor/rocco/lib/rocco'
 
-def content
-  r = Rocco.new 'wicked.js',[], :language => 'js', :comment_chars => '//' do
-    url = URI.parse('http://yolk.github.com/mite.gyver/wicked.js')
+def content(env)
+  file_url = env['REQUEST_PATH'][1..-1];
+  r = Rocco.new file_url,[], :language => File.extname(file_url)[1..-1] do
+    url = URI.parse file_url
     res = Net::HTTP.start(url.host, url.port) {|http|
-      http.get('/vendor/wicked.js/wicked.js')
+      http.get(url.path)
     }
     res.body
   end.to_html
 end
 
-run lambda { |env| [ 200, { 'Content-Type' => 'text/html; charset=utf-8'}, content] }
+run lambda { |env| [ 200, { 'Content-Type' => 'text/html; charset=utf-8', 'Cache-Control' => 'public, max-age=300'}, content(env)] }
