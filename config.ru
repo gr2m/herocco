@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'net/http'
+require 'net/https'
 require 'uri'
 
 require 'rubygems'
@@ -15,14 +16,24 @@ def herocco!(env)
     headers = headers = { 'Content-Type'  => 'text/html; charset=utf-8', 'Cache-Control' => 'public, max-age=8640000'}
     content = File.open(Dir.pwd + '/index.html', File::RDONLY)
   else  
-    url = URI.parse code_url
-    result = Net::HTTP.start(url.host, url.port) {|http| http.get(url.path) }
+    uri = URI.parse code_url
+    
+    http = Net::HTTP.new(uri.host, uri.port)
+    if uri.scheme == 'https'
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    end
+    request = Net::HTTP::Get.new(uri.request_uri)
+
+    response = http.request(request)
   
-    if result.is_a? Net::HTTPOK
+    puts response.inspect
+  
+    if response.is_a? Net::HTTPOK
       status  = 200
       headers = { 'Content-Type'  => 'text/html; charset=utf-8', 'Cache-Control' => 'public, max-age=8640000'}
       content = Rocco.new code_url,[], :language => File.extname(code_url)[1..-1] do
-        result.body
+        response.body
       end.to_html
     else
       status  = 404
