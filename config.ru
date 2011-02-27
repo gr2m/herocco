@@ -2,6 +2,9 @@
 
 require 'net/http'
 require 'uri'
+
+require 'rubygems'
+require "bundler/setup"
 require 'rocco'
 
 def content(env)
