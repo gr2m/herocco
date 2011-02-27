@@ -11,9 +11,6 @@ def content
       http.get('/vendor/wicked.js/wicked.js')
     }
     res.body
-    
-    "// super funky fresh
-    x = function() {};"
   end.to_html
 end
 
