@@ -9,8 +9,15 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    daemons (1.1.0)
+    eventmachine (0.12.10)
     mustache (0.98.0)
+    rack (1.2.1)
     rdiscount (1.6.8)
+    thin (1.2.8)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
 
 PLATFORMS
   ruby
@@ -18,3 +25,4 @@ PLATFORMS
 DEPENDENCIES
   rdiscount
   rocco!
+  thin
