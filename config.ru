@@ -2,7 +2,7 @@
 
 require 'net/http'
 require 'uri'
-require File.dirname(__FILE__) +'/vendor/rocco/lib/rocco.rb'
+require 'rocco'
 
 def content(env)
   file_url = env['REQUEST_PATH'][1..-1];

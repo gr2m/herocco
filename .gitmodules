@@ -1,3 +1,0 @@
-[submodule "vendor/rocco"]
-	path = vendor/rocco
-	url = git://github.com/gr2m/rocco.git
