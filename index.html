@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset="utf-8"> 
+  <title>Herocco – Code documentation en demand!</title> 
+  
+  <link rel="stylesheet" href="http://github.com/jashkenas/docco/raw/0.3.0/resources/docco.css" type="text/css">
+  <link rel="stylesheet" href="http://gr2m.github.com/awesome-buttons/awesome-buttons.css" type="text/css">
+  
+  <style type="text/css" media="screen">
+    body {
+      text-align:       center;
+    }
+    h1 {
+      font-weight:      normal;
+      font-size:        2.4em;
+      
+    }
+    h1 + p {
+      font-size:        1.2em; 
+    }
+    
+    input {
+      font:             inherit;
+      text-align:       center;
+      
+      padding:          .2em;
+      display:          block;
+      width:            50em;
+      margin:           0 auto 1em;
+      
+              border-radius: 10px;
+         -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      
+    }
+    
+    ul {
+      list-style:       none;
+      padding-left:     0;
+    }
+    p, li {
+      font-size:        .8em;
+    }
+  </style>
+  
+</head> 
+<body> 
+  <h1>Herocco – Code documentation en demand!</h1>
+  
+  <p>
+    If prefer to look at Code in a <a href="http://jashkenas.github.com/docco/">nice &amp; readable way</a>, 
+    you'll love Herocco! Simply put in the URL of the source file in the text input below:
+  </p>
+  
+  <form>
+    <input type="text" id="url" value="http://code.jquery.com/jquery-1.5.1.js" />
+    <button class="awesome" onclick="location.href = '/' + document.getElementById('url').value; return false;">load the code and make it sweet!</button>
+  </form>
+  
+  <p>
+    (supported languages by now: Javascript, Ruby, CSS)
+  </p>
+</body> 
+</html>
