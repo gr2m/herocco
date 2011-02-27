@@ -10,12 +10,8 @@ def content
     res = Net::HTTP.start(url.host, url.port) {|http|
       http.get('/vendor/wicked.js/wicked.js')
     }
-    
-    puts 'say, what?'
-    res.body.force_encoding('UTF-8')
-  end
-
-  r.to_html || 'nothing'
+    res.body
+  end.to_html
 end
 
 run lambda { |env| [ 200, { 'Content-Type' => 'text/html; charset=utf-8'}, content] }
