@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gr2m/rocco.git
-  revision: b7135ff4fa6c3cac2f0c303fc0ea817fecbb5ee5
+  revision: 83985f1cbfab98b4cadac28be12696835c4e1eaa
   specs:
     rocco (0.5)
       mustache
