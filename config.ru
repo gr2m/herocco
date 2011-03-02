@@ -32,7 +32,7 @@ def herocco!(env)
     if response.is_a? Net::HTTPOK
       status  = 200
       headers = { 'Content-Type'  => 'text/html; charset=utf-8', 'Cache-Control' => 'public, max-age=8640000'}
-      content = Rocco.new code_url,[], :language => File.extname(code_url)[1..-1] do
+      content = Rocco.new code_url,[], :language => File.extname(code_url)[1..-1], :template_file => 'layout.mustache' do
         response.body
       end.to_html
     else

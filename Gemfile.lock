@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gr2m/rocco.git
-  revision: e8da92867a21bad310c698a6c0226d117d66f135
+  revision: 59493bb3c1420e29fc3f346fe8f9b352e66578fb
   specs:
     rocco (0.5)
       mustache
@@ -9,7 +9,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    mustache (0.98.0)
+    mustache (0.99.1)
     rdiscount (1.6.8)
 
 PLATFORMS

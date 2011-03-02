@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="http://github.com/jashkenas/docco/raw/0.3.0/resources/docco.css">
+  <style type="text/css">
+    tr:nth-child(even) td {
+      background:       rgba(0,0,0,.04);
+    }
+  </style>
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  {{#sources?}}
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+        {{#sources}}
+          <a class="source" href="{{ url }}">{{ basename }}</a>
+        {{/sources}}
+      </div>
+    </div>
+  </div>
+  {{/sources?}}
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>{{ title }}</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#sections}}
+    <tr id='section-{{ section_id }}'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-{{ section_id }}">&#182;</a>
+        </div>
+        {{{ docs }}}
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>{{{ code }}}</pre></div>
+      </td>
+    </tr>
+    {{/sections}}
+  </table>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-805275-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
