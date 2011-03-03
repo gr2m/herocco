@@ -50,6 +50,6 @@ def herocco!(env)
   [ status, headers, content]
 end
 
-run lambda { |env| herocco!(env) }
+run lambda { |env| [200, { 'Content-Type'  => 'text/html; charset=utf-8' }, 'wtf?'] } # herocco!(env)
 
 
