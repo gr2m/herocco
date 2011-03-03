@@ -2,14 +2,11 @@
 
 require 'net/http'
 require 'net/https'
-puts "require 'uri'"
 require 'uri'
 
-puts "require 'rubygems'"
 require 'rubygems'
-puts "require 'bundler/setup'"
-require "bundler/setup"
-puts "rocco"
+require 'rdiscount'
+require 'rocco'
 require 'rocco'
 
 def herocco!(env)
