@@ -15,6 +15,10 @@ def herocco!(env)
     status  = 200
     headers = headers = { 'Content-Type'  => 'text/html; charset=utf-8', 'Cache-Control' => 'public, max-age=8640000'}
     content = File.open(Dir.pwd + '/index.html', File::RDONLY)
+  elsif code_url =~ /favicon/
+    status  = 404
+    headers = headers = { 'Content-Type'  => 'text/html; charset=utf-8', 'Cache-Control' => 'public, max-age=8640000'}
+    content = ''
   else  
     uri = URI.parse code_url
     
