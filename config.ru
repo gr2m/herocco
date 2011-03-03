@@ -5,7 +5,7 @@ require 'net/https'
 require 'uri'
 
 require 'rubygems'
-
+require 'bundler/setup'
 require 'rocco'
 
 def herocco!(env)
