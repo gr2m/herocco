@@ -5,8 +5,7 @@ require 'net/https'
 require 'uri'
 
 require 'rubygems'
-require 'rdiscount'
-require 'rocco'
+
 require 'rocco'
 
 def herocco!(env)
